@@ -17,13 +17,13 @@ public class ReadCsvFileServiceImpl {
 
     public void save(MultipartFile file) {
         try {
-            List<ReadCsvFile> tutorials = CsvHelper.csvToTutorials(file.getInputStream());
-            readCsvFileRepo.saveAll(tutorials);
+            List<ReadCsvFile> readCsvFiles = CsvHelper.readCsvFiles(file.getInputStream());
+            readCsvFileRepo.saveAll(readCsvFiles);
         } catch (IOException e) {
             throw new RuntimeException("Fail to store csv data: " + e.getMessage());
         }
     }
-    public List<ReadCsvFile> getAllTutorials() {
+    public List<ReadCsvFile> getAllReadCsvFiles() {
         return readCsvFileRepo.findAll();
     }
 }

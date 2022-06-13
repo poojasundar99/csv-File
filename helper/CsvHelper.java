@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CsvHelper {
-    public static String TYPE = "text/csv";
+    public static String TYPE = "csv";
     static String[] HEADER = {"Id", "Name", "PhoneNumber", "Email"};
 
     public static boolean hasCSVFormat(MultipartFile file) {
@@ -21,7 +21,7 @@ public class CsvHelper {
         return true;
     }
 
-    public static List<ReadCsvFile> csvToTutorials(InputStream is) {
+    public static List<ReadCsvFile> readCsvFiles(InputStream is) {
 
         //  Create bufferedReader to convert the input stream into bufferedReader
         try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(is, "UTF-8"));

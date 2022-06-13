@@ -19,9 +19,9 @@ public class ReadCsvFileController {
     private ReadCsvFileServiceImpl readCsvFileServiceImpl;
 
     @GetMapping("/read-csv")
-    public ResponseEntity<List<ReadCsvFile>> getAllTutorials() {
+    public ResponseEntity<List<ReadCsvFile>> getAllReadFields() {
         try {
-            List<ReadCsvFile> tutorials = readCsvFileServiceImpl.getAllTutorials();
+            List<ReadCsvFile> tutorials = readCsvFileServiceImpl.getAllReadCsvFiles();
             if (tutorials.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
