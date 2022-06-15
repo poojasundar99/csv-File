@@ -23,8 +23,8 @@ public class ReadCsvFileServiceImpl {
             throw new RuntimeException("Fail to store csv data: " + e.getMessage());
         }
     }
-    public List<ReadCsvFile> getAllReadCsvFiles() {
-        return readCsvFileRepo.findAll();
+    public List<ReadCsvFile> getAllReadCsvFiles() {return readCsvFileRepo.findAll();
     }
+
 }
 
